@@ -19,7 +19,26 @@ The.Assassin.2015.Extended
 The structure of the folder after using the script is as follows:
 
 ```
-// The script command and output are omitted for brevity
+❯ node src/index.js "/Users/_/Downloads/刺客聂隐娘.加长版.2015.JPN.1080p.简繁中字￡CMCT风潇潇.torrent" "/Volumes/public_temp/download/movie/The.Assassin.2015.Extended" --dry-run
+{
+  _: [],
+  'dry-run': true,
+  d: true,
+  dryRun: true,
+  'rename-root': true,
+  r: true,
+  renameRoot: true,
+  '$0': 'src/index.js',
+  torrent: '/Users/_/Downloads/刺客聂隐娘.加长版.2015.JPN.1080p.简繁中字￡CMCT风潇潇.torrent',
+  target: '/Volumes/public_temp/download/movie/The.Assassin.2015.Extended'
+}
+目标包含文件数量:4
+种子名称: 刺客聂隐娘.加长版.2015.JPN.1080p.简繁中字￡CMCT风潇潇, 包含文件数量:4
+目标地址包含多于文件,忽略 3618 /Volumes/public_temp/download/movie/The.Assassin.2015.Extended/movie.nfo
+do rename /Volumes/public_temp/download/movie/The.Assassin.2015.Extended/......2015 .....txt -> /Volumes/public_temp/download/movie/刺客聂隐娘.加长版.2015.JPN.1080p.简繁中字￡CMCT风潇潇/刺客聂隐娘.2015 内容简介.txt
+do rename /Volumes/public_temp/download/movie/The.Assassin.2015.Extended/......2015 .....jpg -> /Volumes/public_temp/download/movie/刺客聂隐娘.加长版.2015.JPN.1080p.简繁中字￡CMCT风潇潇/刺客聂隐娘.2015 蓝光海报.jpg
+do rename /Volumes/public_temp/download/movie/The.Assassin.2015.Extended/[.....].The.Assassin.2015.Extended.BluRay.1080p.x264.DTS-CMCT.mkv -> /Volumes/public_temp/download/movie/刺客聂隐娘.加长版.2015.JPN.1080p.简繁中字￡CMCT风潇潇/[刺客
+聂隐娘].The.Assassin.2015.Extended.BluRay.1080p.x264.DTS-CMCT.mkv
 ```
 
 ## Usage
@@ -66,49 +85,4 @@ npm install
 
 This script is released under the MIT license.
 
-This script is used to match torrent files with their corresponding root directories. It uses the `yargs` library to parse command line arguments, `lodash-es` for utility functions, `fastest-levenshtein` for string comparison, and `parse-torrent` to parse torrent files.
-
-## Usage
-
-You can run the script with the following command:
-
-```bash
-node src/index.js <torrent> <target> [--rename-root] [--dry-run]
-```
-
-Where:
-
-- `<torrent>` is the path to the torrent file.
-- `<target>` is the path to the root directory of the files corresponding to the torrent.
-- `--rename-root` is an optional flag that, if set, will rename the target root directory to the name of the torrent. This is enabled by default.
-- `--dry-run` is an optional flag that, if set, will not perform any actual operations, but will instead print out what would have been done. This is disabled by default.
-
-## Functionality
-
-The script first reads the torrent file and the target directory, grouping files by their size. It then matches files in the torrent with files in the target directory based on their size and name. If the `--rename-root` flag is set, it will also rename the root directory to match the name of the torrent.
-
-If the `--dry-run` flag is set, the script will print out what it would have done, but will not perform any actual operations.
-
-## Limitations
-
-The script assumes that all files in the torrent and the target directory are unique in size. If there are multiple files with the same size, it may not correctly match them.
-
-## Dependencies
-
-This script requires Node.js and the following npm packages:
-
-- `yargs`
-- `lodash-es`
-- `fastest-levenshtein`
-- `parse-torrent`
-
-You can install these dependencies with the following command:
-
-```bash
-npm install
-```
-
-## License
-
-This script is released under the MIT License.
 
